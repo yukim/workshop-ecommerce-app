@@ -139,8 +139,15 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<image>
-						<name>ghcr.io/yukim/sample-ecommerce</name>
+						<name>ghcr.io/yukim/${project.artifactId}-${project.name}:${project.version}</name>
 					</image>
+					<docker>
+						<publishRegistry>
+							<url>ghcr.io</url>
+							<username>${env.REGISTRY_USERNAME}</username>
+							<password>${env.REGISTRY_PASSWORD}</password>
+						</publishRegistry>
+					</docker>
 				</configuration>
 			</plugin>
 			<plugin>
