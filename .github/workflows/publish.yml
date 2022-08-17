@@ -26,6 +26,8 @@ jobs:
           cache: 'maven'
       - run: npm --prefix ui ci
       - name: Build UI
+        env:
+          CI: false
         run: npm --prefix ui run build
       - name: Build with Maven and publish image
         env:
