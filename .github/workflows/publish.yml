@@ -24,7 +24,7 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
           cache: 'maven'
-      - run: npm --refix ui ci
+      - run: npm --prefix ui ci
       - name: Build UI
         run: npm --prefix ui run build
       - name: Build with Maven and publish image
