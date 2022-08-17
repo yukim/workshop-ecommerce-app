@@ -33,4 +33,4 @@ jobs:
         env:
           REGISTRY_USERNAME: ${{ github.actor }}
           REGISTRY_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
-        run: mvn spring-boot:build-image -DskipTests=true -Dspring-boot.boot-image.publish=true --file backend/pom.xml
+        run: mvn spring-boot:build-image -DskipTests=true -Dspring-boot.build-image.publish=true --file backend/pom.xml
