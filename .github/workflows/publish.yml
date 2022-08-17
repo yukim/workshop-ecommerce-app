@@ -24,8 +24,9 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
           cache: 'maven'
+      - run: npm --refix ui ci
       - name: Build UI
-        run: npm --prefix ui install && npm --prefix ui run build
+        run: npm --prefix ui run build
       - name: Build with Maven and publish image
         env:
           REGISTRY_USERNAME: ${{ github.actor }}
