@@ -33,7 +33,7 @@ public class ECommerceApplication extends WebSecurityConfigurerAdapter {
     	// @formatter:off
         http
         	.authorizeRequests(a -> a
-            		.antMatchers("/", "/api/v1/users/", "/error", "/webjars/**").permitAll()
+            		.antMatchers("/", "/api/v1/users/", "/error", "/webjars/**", "/actuator/**").permitAll()
             		.anyRequest().authenticated()
             		//.anyRequest().permitAll()
             	)

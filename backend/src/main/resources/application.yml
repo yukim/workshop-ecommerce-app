@@ -18,3 +18,17 @@ spring:
   data:
     cassandra:
       schema-action: create-if-not-exists
+
+management:
+  server:
+    port: 8081
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include: health
+  endpoint:
+    health:
+      enabled: true
+      probes:
+        enabled: true

@@ -9,6 +9,7 @@ public class CassandraConfig {
 
     @Bean
     public CqlSession getOtelCqlSession() {
-        return CqlSession.builder().build();
+        CqlSession delegate = CqlSession.builder().build();
+        return new OtelCqlSession(delegate);
     }
 }
